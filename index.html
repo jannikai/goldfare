@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GoldFare prototype — compare precious-metal offers from online and local dealers." />
+  <title>GoldFare — Compare. Buy. Sell. Gold.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="nav shell">
+    <a class="brand" href="#" aria-label="GoldFare home"><span class="brand-mark">GF</span><span>GoldFare</span></a>
+    <nav>
+      <a href="#compare">Compare</a><a href="#how">How it works</a><a href="#dealers">For dealers</a>
+    </nav>
+    <button class="ghost-btn" data-open-modal="alerts">Set price alert</button>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="eyebrow"><span></span> Precious metals, transparently priced</div>
+      <h1>Find the better<br><em>gold deal.</em></h1>
+      <p class="hero-copy">Compare the total cost to buy—or the best offer to sell—from verified online and NYC dealers.</p>
+      <div class="trust-row"><span>Clear premiums</span><span>Verified dealers</span><span>Local pickup</span></div>
+    </section>
+
+    <section class="comparison shell" id="compare">
+      <div class="mode-tabs" role="tablist">
+        <button class="mode active" data-mode="buy" role="tab">I want to buy</button>
+        <button class="mode" data-mode="sell" role="tab">I want to sell</button>
+      </div>
+
+      <div class="search-card">
+        <div class="field product-field">
+          <label for="product">Product</label>
+          <select id="product">
+            <option value="eagle">1 oz American Gold Eagle</option>
+            <option value="maple">1 oz Canadian Gold Maple Leaf</option>
+            <option value="bar">1 oz Gold Bar</option>
+            <option value="silver">1 oz American Silver Eagle</option>
+          </select>
+        </div>
+        <div class="field small-field">
+          <label for="quantity">Quantity</label>
+          <input id="quantity" type="number" min="1" max="50" value="1" />
+        </div>
+        <div class="field location-field">
+          <label for="location">Location</label>
+          <input id="location" type="text" value="New York, NY" />
+        </div>
+        <button id="compareBtn" class="primary-btn">Compare offers <span>→</span></button>
+      </div>
+
+      <div class="market-bar">
+        <div><span class="pulse"></span><strong>Prototype reference price</strong><span id="spotPrice">$3,000.00 / oz</span></div>
+        <span>Demo data — not a live market quote</span>
+      </div>
+
+      <div class="results-header">
+        <div><span id="resultCount">3 offers</span><h2 id="resultsTitle">Best prices to buy</h2></div>
+        <label class="sort-label">Sort by
+          <select id="sortSelect"><option value="best">Best total price</option><option value="fast">Fastest delivery</option><option value="rating">Dealer rating</option></select>
+        </label>
+      </div>
+      <div id="results" class="results-grid" aria-live="polite"></div>
+      <p class="disclaimer">Prototype estimates only. Prices, inventory and eligibility require confirmation by the dealer. GoldFare does not currently sell, custody or authenticate metals.</p>
+    </section>
+
+    <section class="how shell" id="how">
+      <div class="section-heading"><span>How it works</span><h2>From search to secure handoff.</h2></div>
+      <div class="steps">
+        <article><b>01</b><h3>Search one product</h3><p>Choose a standardized coin or bar and enter quantity and location.</p></article>
+        <article><b>02</b><h3>Compare the real price</h3><p>See premium, payment fee, shipping and pickup—not just the headline number.</p></article>
+        <article><b>03</b><h3>Reserve with a dealer</h3><p>Complete payment directly with a verified dealer or schedule a local appraisal.</p></article>
+      </div>
+    </section>
+
+    <section class="dealer-section" id="dealers">
+      <div class="shell dealer-inner">
+        <div><span class="section-label">For precious-metal dealers</span><h2>Turn inventory into qualified demand.</h2><p>Publish products, automate premiums, receive buyback requests and manage local reservations from one dashboard.</p></div>
+        <button class="light-btn" data-open-modal="dealer">Join the founding network →</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell"><div class="brand"><span class="brand-mark">GF</span><span>GoldFare</span></div><p>Compare. Buy. Sell. Gold.</p><span>Interactive concept prototype</span></footer>
+
+  <dialog id="actionModal">
+    <button class="modal-close" aria-label="Close">×</button>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
